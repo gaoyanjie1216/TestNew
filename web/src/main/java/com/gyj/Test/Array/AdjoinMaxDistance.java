@@ -28,7 +28,7 @@ public class AdjoinMaxDistance {
                 max = a[i] - a[i + 1];
             }
         }
-        //System.out.print(max);
+        System.out.print(max);
 
         return max;
     }
