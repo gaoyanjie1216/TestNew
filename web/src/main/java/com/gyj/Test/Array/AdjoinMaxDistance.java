@@ -33,7 +33,6 @@ public class AdjoinMaxDistance {
         return max;
     }
 
-
     /**
      * 时间复杂度为O(n)的算法，但不好理解
      * 最适合的方法是桶排序：
