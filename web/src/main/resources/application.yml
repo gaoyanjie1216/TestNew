@@ -1,0 +1,65 @@
+server:
+#  context-path: /test
+  port: 8081
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    #?characterEncoding=utf8保证输入到数据库中的中文名字可以显示，否则可能乱码，显示？？？
+    url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8
+    username: root
+    password: 123456
+    #最大活跃数
+    maxActive: 20
+    #初始化数量
+    initialSize: 1
+    #最大连接等待超时时间
+    maxWait: 60000
+    #打开PSCache，并且指定每个连接PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    #通过connectionProperties属性来打开mergeSql功能；慢SQL记录
+    #connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 1 from dual
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    #配置监控统计拦截的filters，去掉后监控界面sql将无法统计,'wall'用于防火墙
+    filters: stat, wall, log4j
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+#配置redis数据库连接
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    pool:
+      max-idle: 20
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
+    database: 0  #默认索引为0的数据库
+
+#注意级别，输mvc会提示
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+  data:
+    solr:
+      host: http://127.0.0.1:8983/solr/solr_sample
+
+#Flyway 是独立于数据库的应用、管理并跟踪数据库变更的数据库版本管理工具
+flyway:
+  baseline-on-migrate: true
