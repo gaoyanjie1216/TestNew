@@ -31,14 +31,14 @@ public class FileController {
     private HttpServletRequest request;
 
     /**
-     * 初始化上传文件界面，跳转到index.jsp
+     * 初始化上传文件界面，跳转到uploadfile.jsp
      *
      * @return
      */
-    @ApiOperation(value = "初始化上传文件界面，跳转到index.jsp", notes = "")
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @ApiOperation(value = "初始化上传文件界面，跳转到uploadfile.jsp", notes = "")
+    @RequestMapping(value = "/uploadfile", method = RequestMethod.GET)
     public String index() {
-        return "index";
+        return "uploadfile";
     }
 
     /**
