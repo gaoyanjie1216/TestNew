@@ -7,7 +7,8 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
     #?characterEncoding=utf8保证输入到数据库中的中文名字可以显示，否则可能乱码，显示？？？
-    url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+
     username: root
     password: 123456
     #最大活跃数
@@ -63,3 +64,11 @@ spring:
 #Flyway 是独立于数据库的应用、管理并跟踪数据库变更的数据库版本管理工具
 flyway:
   baseline-on-migrate: true
+
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: aop-demo
+      repositories:
+        enabled: true
