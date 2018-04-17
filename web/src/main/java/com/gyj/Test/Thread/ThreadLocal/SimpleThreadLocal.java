@@ -17,16 +17,16 @@ import java.util.*;
 public class SimpleThreadLocal<T> {
 
     //Key为线程对象，Value为传入的值对象
-    private  Map<Thread, T> valueMap = Collections.synchronizedMap(new HashMap<Thread, T>());
+    private  Map<Thread, T> map = Collections.synchronizedMap(new HashMap<Thread, T>());
 
     //设值value Map键值对的value
     public void set(T value) {
-        valueMap.put(Thread.currentThread(), value);
+        map.put(Thread.currentThread(), value);
     }
 
     //移除
     public void remove() {
-        valueMap.remove(Thread.currentThread());
+        map.remove(Thread.currentThread());
     }
 
     //初始化
@@ -38,11 +38,11 @@ public class SimpleThreadLocal<T> {
     public T get() {
         Thread currentThread = Thread.currentThread();
         //返回当前线程对应的变量
-        T t = valueMap.get(currentThread);
+        T t = map.get(currentThread);
         //如果当前线程在Map中不存在，则将当前线程存储到Map中
-        if (t == null && !valueMap.containsKey(currentThread)) {
+        if (t == null && !map.containsKey(currentThread)) {
             t = initialValue();
-            valueMap.put(currentThread, t);
+            map.put(currentThread, t);
         }
         return t;
     }
