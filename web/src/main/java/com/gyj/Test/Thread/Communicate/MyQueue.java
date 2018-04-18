@@ -104,5 +104,20 @@ public class MyQueue {
         thread1.start();
         thread2.start();
     }
-
 }
+
+
+/**
+ 元素 a 被添加
+ 元素 b 被添加
+ 元素 c 被添加
+ 元素 d 被添加
+ 元素 e 被添加
+ 当前元素个数：5
+ 元素 a 被消费
+ 元素 h 被添加
+ 元素 b 被消费
+ 元素 i 被添加
+ 元素 c 被消费
+ 元素 j 被添加
+ */
