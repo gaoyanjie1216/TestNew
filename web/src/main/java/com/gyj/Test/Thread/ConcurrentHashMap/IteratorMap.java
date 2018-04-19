@@ -41,10 +41,10 @@ public class IteratorMap {
      */
     //使用泛型
     private static void Iterator3() {
-        Iterator<Map.Entry<String, String>> entries = map.entrySet().iterator();
+        Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
         //System.out.println("使用Iterator遍历,并且使用泛型:");
-        while (entries.hasNext()) {
-            Map.Entry<String, String> entry = entries.next();
+        while (iterator.hasNext()) {
+            Map.Entry<String, String> entry = iterator.next();
             //System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
             //注意这里操作了集合,下面的的遍历不会再打印0
             if ("0".equals(entry.getKey())) {
