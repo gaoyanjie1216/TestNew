@@ -166,7 +166,7 @@ public class CountZero {
         }
         long endTime2 = System.nanoTime();
         long duration2 = endTime2 - startTime2;
-        System.out.println("countZero2:" + duration2 / 1000);
+        System.out.println("countZero3:" + duration2 / 1000);
 
     }
 }
