@@ -118,3 +118,9 @@ public class AppearMostChar {
         appearMostChar2(str);
     }
 }
+
+/**
+ appearMostChar 函数出现次数最多的字符是：d  出现的次数是：2
+ appearMostChar1函数出现次数最多的字符是：a  出现的次数是：2
+ appearMostChar2函数出现次数最多的字符是：a b c d   出现的次数是：2
+ */

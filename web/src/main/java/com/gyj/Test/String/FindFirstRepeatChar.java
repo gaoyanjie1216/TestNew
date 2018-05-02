@@ -11,7 +11,7 @@ public class FindFirstRepeatChar {
     private static char findFirstRepeatChar(String str) {
 
         HashSet<Character> set = new HashSet<>();
-        char c1 = 0;
+        char c1;
         for (char c : str.toCharArray()) {
             if (!set.add(c)) {
                 c1 = c;
@@ -32,11 +32,12 @@ public class FindFirstRepeatChar {
                 return a[i];
             }
         }
+
         return '\0';
     }
 
     /**
-     * 时间复杂度为O(N)
+     * 空间换时间，时间复杂度为O(N)
      * @param str
      * @return
      */
@@ -60,7 +61,7 @@ public class FindFirstRepeatChar {
 
         String str = "abdccddd";
 
-        char firstRepeatChar = findFirstRepeatChar(str);
+       /* char firstRepeatChar = findFirstRepeatChar(str);
         System.out.print(firstRepeatChar);
         System.out.println();
 
@@ -69,8 +70,36 @@ public class FindFirstRepeatChar {
         System.out.println();
 
         char firstRepeatChar2 = findFirstRepeatChar2(str);
-        System.out.print(firstRepeatChar2);
+        System.out.print(firstRepeatChar2);*/
 
+
+        long startTime = System.nanoTime();
+        for (int i = 0; i < 1000; i++) {
+            findFirstRepeatChar(str);
+        }
+        long endTime = System.nanoTime();
+        System.out.println("findFirstRepeatChar:" + (endTime - startTime) / 1000);
+
+        long startTime1 = System.nanoTime();
+        for (int i = 0; i < 1000; i++) {
+            findFirstRepeatChar1(str);
+        }
+        long endTime1 = System.nanoTime();
+        System.out.println("findFirstRepeatChar1:" + (endTime1 - startTime1) / 1000);
+
+        long startTime2 = System.nanoTime();
+        for (int i = 0; i < 1000; i++) {
+            findFirstRepeatChar2(str);
+        }
+        long endTime2 = System.nanoTime();
+        System.out.println("findFirstRepeatChar2:" + (endTime2 - startTime2) / 1000);
     }
-
 }
+
+
+/**
+ * 三者运行时间对比
+ findFirstRepeatChar:1578
+ findFirstRepeatChar1:1146
+ findFirstRepeatChar2:621
+ */
