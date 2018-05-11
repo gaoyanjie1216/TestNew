@@ -17,12 +17,12 @@ public class HttpAspect {
 
     public static final Log log = LogFactory.getLog(HttpAspect.class);
 
-    @Pointcut("execution(public * com.gyj.Controller.GirlController.*(..))")
+    //@Pointcut("execution(public * com.gyj.common.Controller.GirlController.*(..))")
     public void logger() {
 
     }
 
-    @Before("logger()")
+   /* @Before("logger()")
     public void doBefore() {
         log.info("11111111");
     }
@@ -30,6 +30,6 @@ public class HttpAspect {
     @After("logger()")
     public void doAfter() {
         log.info("22222222");
-    }
+    }*/
 
 }

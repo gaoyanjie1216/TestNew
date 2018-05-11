@@ -8,7 +8,7 @@
 		</property>
 	</bean>-->
 
-	<bean id="basicDao" class="com.gyj.Dao.HibernateDao.BasicDaoImpl">
+	<bean id="basicDao" class="com.gyj.common.Dao.HibernateDao.BasicDaoImpl">
 		<property name="sessionFactory">
 			<ref local="sessionFactory" />
 		</property>

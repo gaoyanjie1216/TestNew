@@ -1,6 +1,6 @@
 package com.gyj.configuration;
 
-import com.gyj.enums.ResultEnum;
+import com.gyj.common.enums.ResultEnum;
 
 /**
  * Created by Gao on 2017/12/16.
